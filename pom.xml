@@ -18,6 +18,7 @@
 
 		<module>spring-boot-annotation-params</module>
         <module>spring-boot-test</module>
+		<module>datasource-export-spring-boot-parent</module>
     </modules>
 	
 	<properties>
