@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hb0730.datasource.export.mapper.TableMapper">
+    <resultMap id="tableEntity" type="com.hb0730.datasource.export.entity.TableEntity">
+        <result property="table_name" column="TABLE_NAME" javaType="java.lang.String"/>
+        <result property="table_comment" column="TABLE_COMMENT" javaType="java.lang.String"/>
+    </resultMap>
+    <resultMap id="tableInfoEntity" type="com.hb0730.datasource.export.entity.TableInfoEntity">
+        <result property="table_name" column="TABLE_NAME" javaType="java.lang.String"/>
+        <result property="column_name" column="COLUMN_NAME" javaType="java.lang.String"/>
+        <result property="ordinal_position" column="ORDINAL_POSITION" javaType="java.lang.String"/>
+        <result property="column_default" column="COLUMN_DEFAULT" javaType="java.lang.String"/>
+        <result property="is_nullable" column="IS_NULLABLE" javaType="java.lang.String"/>
+        <result property="data_type" column="DATA_TYPE" javaType="java.lang.String"/>
+        <result property="character_maximum_length" column="CHARACTER_MAXIMUM_LENGTH" javaType="java.lang.String"/>
+        <result property="character_octet_length" column="CHARACTER_OCTET_LENGTH" javaType="java.lang.String"/>
+        <result property="column_type" column="COLUMN_TYPE" javaType="java.lang.String"/>
+        <result property="column_comment" column="COLUMN_COMMENT" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="listTable" resultMap="tableEntity">
+        select TABLE_NAME,TABLE_COMMENT from information_schema.TABLES where TABLE_SCHEMA=(select database())
+    </select>
+    <select id="listTableColumn" resultMap="tableInfoEntity" parameterType="string">
+        select
+        TABLE_NAME,
+        COLUMN_NAME,
+        ORDINAL_POSITION,
+        COLUMN_DEFAULT,
+        IS_NULLABLE,
+        DATA_TYPE,
+        CHARACTER_MAXIMUM_LENGTH,
+        CHARACTER_OCTET_LENGTH,
+        COLUMN_TYPE,
+        COLUMN_COMMENT
+        from information_schema.COLUMNS where TABLE_SCHEMA = (select database()) and TABLE_NAME=#{tableName}
+    </select>
+</mapper>

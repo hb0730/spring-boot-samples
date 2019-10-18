@@ -16,7 +16,9 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <name>datasource-export-spring-boot-parent</name>
-
+    <modules>
+        <module>datasource-export-spring-boot</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -35,9 +37,9 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>cn.afterturn</groupId>
-                <artifactId>easypoi-spring-boot-starter</artifactId>
-                <version>${easypoi-version}</version>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.8</version>
             </dependency>
         </dependencies>
 
