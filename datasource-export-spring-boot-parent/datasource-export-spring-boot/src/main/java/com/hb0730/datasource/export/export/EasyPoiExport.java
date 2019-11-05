@@ -8,6 +8,7 @@ import com.hb0730.datasource.export.dto.easypoi.TableDTO;
 import com.hb0730.datasource.export.entity.TableEntity;
 import com.hb0730.datasource.export.entity.TableInfoEntity;
 import com.hb0730.datasource.export.services.inter.TableServiceInter;
+import com.hb0730.datasource.export.style.ExcelExportStylerImpl;
 import com.hb0730.datasource.export.utils.SpringContextUtil;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.BeanUtils;
@@ -53,6 +54,7 @@ public class EasyPoiExport {
         Map<String, Object> tableMap = new HashMap();
         ExportParams exportParams = new ExportParams();
         exportParams.setTitle("表说明");
+        exportParams.setStyle(ExcelExportStylerImpl.class);
         tableMap.put("title", exportParams);
         tableMap.put("entity", TableDTO.class);
         tableMap.put("data", dtos);
@@ -70,6 +72,7 @@ public class EasyPoiExport {
             ExportParams params = new ExportParams();
             params.setTitle(info.getTable_comment());
             params.setSheetName(table_name);
+            params.setStyle(ExcelExportStylerImpl.class);
             map.put("title", params);
             map.put("entity", ColumnDTO.class);
             map.put("data", columns);

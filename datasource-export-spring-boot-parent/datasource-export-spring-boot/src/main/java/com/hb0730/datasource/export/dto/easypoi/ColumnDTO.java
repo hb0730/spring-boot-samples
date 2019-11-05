@@ -55,6 +55,11 @@ public class ColumnDTO implements Serializable {
      */
     private String column_type;
     /**
+     * column_key
+     */
+    @Excel(name = "键值")
+    private String column_key;
+    /**
      * column comment
      */
     @Excel(name = "列说明")

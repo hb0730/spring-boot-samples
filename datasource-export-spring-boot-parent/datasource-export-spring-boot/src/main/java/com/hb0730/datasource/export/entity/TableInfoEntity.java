@@ -64,4 +64,9 @@ public class TableInfoEntity implements Serializable {
      * column comment
      */
     private String column_comment;
+
+    /**
+     * column_key
+     */
+    private String column_key;
 }
