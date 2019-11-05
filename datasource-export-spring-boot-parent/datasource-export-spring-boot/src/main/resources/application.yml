@@ -5,9 +5,9 @@ spring:
     static-locations: classpath:/
   datasource:
     # 测试
-    username: root
-    password: HOHOfast123798
-    url: jdbc:mysql://rm-bp1g819mmlfs877s2jo.mysql.rds.aliyuncs.com/hohofast_test5?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: xxx
+    password: xxxx
+    url: jdbc:mysql://xxxx:3306/hohofast_test5?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.jdbc.Driver
     platform: mysql
 #    #HikariDataSource
