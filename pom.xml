@@ -20,6 +20,7 @@
         <module>spring-boot-test</module>
 		<module>datasource-export-spring-boot-parent</module>
         <module>spring-boot-dynamictask</module>
+        <module>spring-boot-rocketmq</module>
     </modules>
 	
 	<properties>
