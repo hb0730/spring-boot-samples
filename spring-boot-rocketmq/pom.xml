@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>apache-rocketmq-spring-boot</module>
+        <module>alibaba-rocketmq-spring-boot</module>
     </modules>
 
     <properties>
