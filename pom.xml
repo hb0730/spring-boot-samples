@@ -21,6 +21,7 @@
 		<module>datasource-export-spring-boot-parent</module>
         <module>spring-boot-dynamictask</module>
         <module>spring-boot-rocketmq</module>
+        <module>spring-boot-starter-samples</module>
     </modules>
 	
 	<properties>

@@ -7,3 +7,5 @@ spring boot 案例
 spring 定时任务的动态化配置
 # spring-boot-rocketmq
 spring-boot 集成rocketMQ <http://rocketmq.apache.org/docs/filter-by-sql92-example/>
+@ spring-boot-starter-samples
+spring boot starter制作案例
