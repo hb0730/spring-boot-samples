@@ -6,6 +6,9 @@ spring boot 案例
 # spring-boot-dynamictask
 spring 定时任务的动态化配置
 # spring-boot-rocketmq
-spring-boot 集成rocketMQ <http://rocketmq.apache.org/docs/filter-by-sql92-example/>
-@ spring-boot-starter-samples
+ # apache-rocketmq-spring-boot
+  spring-boot 集成rocketMQ <http://rocketmq.apache.org/docs/filter-by-sql92-example/>
+ # alibaba-rocketmq-spring-boot
+ spring-boot 集成 aliMQ <https://github.com/AliwareMQ/mq-demo>
+# spring-boot-starter-samples
 spring boot starter制作案例
