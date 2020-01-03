@@ -17,3 +17,5 @@ spring 定时任务的动态化配置
  spring-boot 集成 aliAMQP <https://github.com/AliwareMQ/amqp-demos/tree/master/amqp-springboot-demo/SprintBootDemo?spm=a2c4g.11186623.2.15.221a1eb3YRP2Ci>
 # spring-boot-starter-samples
 spring boot starter制作案例
+# http-restemplate-spring-boot
+ spring rest Template + apache client pool 实现 rest风格的连接池调用
