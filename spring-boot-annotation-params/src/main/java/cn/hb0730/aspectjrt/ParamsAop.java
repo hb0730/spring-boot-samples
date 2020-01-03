@@ -20,9 +20,8 @@ import java.util.List;
  * <p>
  *     Params aop拦截
  * </p>
- *
  * @author bing_huang
- * @version V1.0
+ * @version v1.0
  * @date 2019/9/17 11:07
  */
 @Component
@@ -36,7 +35,7 @@ public class ParamsAop {
      * 参数不为空
      * paramsNotNull
      *
-     * @param point
+     * @param  point
      */
     @Before("annotationParamsNotNull()")
     public void nullFilter(JoinPoint point) throws ClassNotFoundException, NoSuchMethodException {
