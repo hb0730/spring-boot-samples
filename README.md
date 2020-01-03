@@ -10,5 +10,10 @@ spring 定时任务的动态化配置
   spring-boot 集成rocketMQ <http://rocketmq.apache.org/docs/filter-by-sql92-example/>
  ## alibaba-rocketmq-spring-boot
  spring-boot 集成 aliMQ <https://github.com/AliwareMQ/mq-demo>
+# spring-boot-rabbitmq
+ ## rabbitmq-spring-boot-rabbitmq
+  spring-boot 集成rabbitmq <https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/html/spring-boot-features.html#boot-features-amqp>
+ ## alibaba-rabbitmq-spring-boot
+ spring-boot 集成 aliAMQP <https://github.com/AliwareMQ/amqp-demos/tree/master/amqp-springboot-demo/SprintBootDemo?spm=a2c4g.11186623.2.15.221a1eb3YRP2Ci>
 # spring-boot-starter-samples
 spring boot starter制作案例
