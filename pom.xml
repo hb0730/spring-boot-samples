@@ -23,6 +23,7 @@
         <module>spring-boot-rocketmq</module>
         <module>spring-boot-starter-samples</module>
         <module>spring-boot-rabbitmq</module>
+        <module>http-restemplate-spring-boot</module>
     </modules>
 	
 	<properties>
