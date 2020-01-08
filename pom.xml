@@ -24,7 +24,8 @@
         <module>spring-boot-starter-samples</module>
         <module>spring-boot-rabbitmq</module>
         <module>http-restemplate-spring-boot</module>
-    </modules>
+		<module>spring-boot-close</module>
+	</modules>
 	
 	<properties>
 		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
