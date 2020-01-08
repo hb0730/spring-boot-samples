@@ -19,3 +19,5 @@ spring 定时任务的动态化配置
 spring boot starter制作案例
 # http-restemplate-spring-boot
  spring rest Template + apache client pool 实现 rest风格的连接池调用
+# spring-boot-close 
+ spring-boot项目如何显示调用关闭应用
