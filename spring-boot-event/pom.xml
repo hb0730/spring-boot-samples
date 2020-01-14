@@ -9,18 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-rocketmq</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>apache-rocketmq-spring-boot</module>
-        <module>alibaba-rocketmq-spring-boot</module>
-        <module>alibaba-rocketmq-spring-boot-starter</module>
-    </modules>
+    <artifactId>spring-boot-event</artifactId>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <rocketmq.client.version>4.5.2</rocketmq.client.version>
-    </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,4 +23,33 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <!--<scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

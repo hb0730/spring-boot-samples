@@ -21,3 +21,5 @@ spring boot starter制作案例
  spring rest Template + apache client pool 实现 rest风格的连接池调用
 # spring-boot-close 
  spring-boot项目如何显示调用关闭应用
+# spring-boot-event
+ spring event事件监听

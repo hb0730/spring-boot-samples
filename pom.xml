@@ -25,6 +25,8 @@
         <module>spring-boot-rabbitmq</module>
         <module>http-restemplate-spring-boot</module>
 		<module>spring-boot-close</module>
+        <module>spring-boot-listener</module>
+		<module>spring-boot-event</module>
 	</modules>
 	
 	<properties>
