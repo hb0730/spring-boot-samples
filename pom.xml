@@ -27,7 +27,8 @@
 		<module>spring-boot-close</module>
         <module>spring-boot-listener</module>
 		<module>spring-boot-event</module>
-	</modules>
+        <module>spring-boot-oauth2</module>
+    </modules>
 	
 	<properties>
 		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
