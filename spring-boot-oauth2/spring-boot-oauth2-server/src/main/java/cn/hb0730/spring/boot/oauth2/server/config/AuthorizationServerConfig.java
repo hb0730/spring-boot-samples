@@ -14,7 +14,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
@@ -65,7 +64,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      * 客户端信息配置在数据库
      */
     @Bean
-    public ClientDetailsService clientDetails() {
+    public JdbcClientDetailsService clientDetails() {
         return new JdbcClientDetailsService(dataSource);
 
     }
@@ -78,7 +77,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()")
+//                .checkTokenAccess("isAuthenticated()")
+                .checkTokenAccess("permitAll()")
                 .allowFormAuthenticationForClients();
         logger.info("================AuthorizationServerSecurityConfigurer 已启动================");
     }
@@ -97,6 +97,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         // 如果oauth_client_details表中将autoApprove设置为true，
         // 这样我们就不会重定向和提升为手动批准任何范围
         clients.withClientDetails(clientDetails());
+//        clients.inMemory()//配置内存中，也可以是数据库
+//                .withClient("awbeci")//clientid
+//                .secret("awbeci-secret")
+//                .accessTokenValiditySeconds(3600)//token有效时间  秒
+//                .authorizedGrantTypes("refresh_token", "password", "authorization_code")//token模式
+//                .scopes("all")//限制允许的权限配置
         logger.info("======================ClientDetailsServiceConfigurer 已启动=============================");;
     }
 

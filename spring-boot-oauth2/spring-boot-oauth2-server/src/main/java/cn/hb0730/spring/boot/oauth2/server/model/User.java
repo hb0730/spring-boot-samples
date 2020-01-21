@@ -28,24 +28,24 @@ public class User implements Serializable, UserDetails {
     // 帐户是否过期
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
     // 帐户是否被冻结
     @Override
     @JsonIgnore
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
     // 帐户密码是否过期，一般有的密码要求性高的系统会使用到，比较每隔一段时间就要求用户重置密码
     @Override
     @JsonIgnore
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
     // 帐号是否可用
     @Override
     public boolean isEnabled() {
-        return enabled;
+        return true;
     }
 
     @Override
