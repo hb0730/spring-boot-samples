@@ -5,6 +5,7 @@ import cn.hb0730.spring.boot.oauth2.server.service.impl.RestAuthAccessDeniedHand
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
@@ -35,16 +36,15 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
      */
     @Override
     public void configure(HttpSecurity http) throws Exception {
-//        http.requestMatchers()
-//                .antMatchers("/user/me")
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/user/me","/actuator/health")
-//                .authenticated();
-        http.authorizeRequests().antMatchers("/user/**","/client/**").authenticated();
-        //需要的时候创建session，支持从session中获取认证信息，ResourceServerConfiguration中
-        //session创建策略是stateless不使用，这里其覆盖配置可创建session
-//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
+        http.requestMatchers()
+                .antMatchers("/user/me")
+                .and()
+                .authorizeRequests()
+                .antMatchers("/user/me","/actuator/health")
+                .authenticated();
+//        需要的时候创建session，支持从session中获取认证信息，ResourceServerConfiguration中
+//        session创建策略是stateless不使用，这里其覆盖配置可创建session
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
     }
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {

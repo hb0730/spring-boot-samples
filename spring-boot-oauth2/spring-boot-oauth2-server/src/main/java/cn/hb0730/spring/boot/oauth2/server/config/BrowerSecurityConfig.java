@@ -63,28 +63,25 @@ public class BrowerSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-//        http.requestMatchers().antMatchers("/**");
-//        // 无需认证
-//         http.authorizeRequests().antMatchers("/login", "/oauth/**","/actuator/**").permitAll()
-//                .anyRequest()
-//                // 指定任何经过身份验证的用户都允许URL。
-//                .authenticated();
-//        // 表单登录，无需权限
-//        http.formLogin().loginPage("/login").failureForwardUrl("/login?error=true").permitAll();
-//        //需要认证权限
-//        http.logout().invalidateHttpSession(true).clearAuthentication(true).logoutUrl("/logout");
-//       // 异常处理
-//        http.exceptionHandling().accessDeniedPage("/403");
-//
-//        // 设置跨域问题
-//        http.cors().and().csrf().disable();
-//        http.sessionManagement().invalidSessionUrl("/login");
-//        //单用户登录，如果有一个登录了，同一个用户在其他地方不能登录
-//        http.sessionManagement().maximumSessions(1).maxSessionsPreventsLogin(true);
+        http.requestMatchers().antMatchers("/**");
+        // 无需认证
+         http.authorizeRequests().antMatchers("/login", "/oauth/**","/actuator/**").permitAll()
+                .anyRequest()
+                // 指定任何经过身份验证的用户都允许URL。
+                .authenticated();
+        // 表单登录，无需权限
+        http.formLogin().loginPage("/login").failureForwardUrl("/login?error=true").permitAll();
+        //需要认证权限
+        http.logout().invalidateHttpSession(true).clearAuthentication(true).logoutUrl("/logout");
+       // 异常处理
+        http.exceptionHandling().accessDeniedPage("/403");
 
-        http.antMatcher("/oauth/**").authorizeRequests()
-                .antMatchers("/oauth/**").permitAll()
-                .and().csrf().disable();
+        // 设置跨域问题
+        http.cors().and().csrf().disable();
+        http.sessionManagement().invalidSessionUrl("/login");
+        //单用户登录，如果有一个登录了，同一个用户在其他地方不能登录
+        http.sessionManagement().maximumSessions(1).maxSessionsPreventsLogin(true);
+
     }
 
 

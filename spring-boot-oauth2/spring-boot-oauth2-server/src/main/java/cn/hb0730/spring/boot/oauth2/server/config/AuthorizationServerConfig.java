@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -40,15 +41,16 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private DataSource dataSource;
     private WebResponseExceptionTranslator webResponseExceptionTranslator;
     private UserDetailsServiceImpl userDetailsService;
-
+    private PasswordEncoder passwordEncoder;
     public AuthorizationServerConfig(AuthenticationManager authenticationManager, RedisConnectionFactory redisConnectionFactory,
                                      DataSource dataSource, WebResponseExceptionTranslator webResponseExceptionTranslator,
-                                     UserDetailsServiceImpl userDetailsService) {
+                                     UserDetailsServiceImpl userDetailsService,PasswordEncoder passwordEncoder) {
         this.authenticationManager = authenticationManager;
         this.redisConnectionFactory = redisConnectionFactory;
         this.dataSource = dataSource;
         this.webResponseExceptionTranslator = webResponseExceptionTranslator;
         this.userDetailsService = userDetailsService;
+        this.passwordEncoder=passwordEncoder;
     }
 
     /**
@@ -76,7 +78,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("permitAll()")
+        security
+                .passwordEncoder(passwordEncoder)
+                .tokenKeyAccess("permitAll()")
 //                .checkTokenAccess("isAuthenticated()")
                 .checkTokenAccess("permitAll()")
                 .allowFormAuthenticationForClients();
@@ -117,15 +121,15 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         endpoints.authenticationManager(authenticationManager);
         //配置token存储方式
         endpoints.tokenStore(tokenStore());
+        //要使用refresh_token的话，需要额外配置userDetailsService
+        endpoints.userDetailsService(userDetailsService);
+        //自定义登录或者鉴权失败时的返回信息
+        endpoints.exceptionTranslator(webResponseExceptionTranslator);
+        endpoints.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
         // 自定义TokenServices
 //        endpoints.tokenServices();
         // 配置JwtAccessToken转换器
 //        endpoints.accessTokenConverter();
-        //自定义登录或者鉴权失败时的返回信息
-        endpoints.exceptionTranslator(webResponseExceptionTranslator);
-        //要使用refresh_token的话，需要额外配置userDetailsService
-        endpoints.userDetailsService(userDetailsService);
-        endpoints.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
         logger.info("===============AuthorizationServerEndpointsConfigurer已启动=============");
     }
 }
