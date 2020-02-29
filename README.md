@@ -23,3 +23,5 @@ spring boot starter制作案例
  spring-boot项目如何显示调用关闭应用
 # spring-boot-event
  spring event事件监听
+# spring-boot-seata
+ Alibaba seata 分布式事务案例(官方案例)
