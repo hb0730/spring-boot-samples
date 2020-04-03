@@ -29,6 +29,7 @@
 		<module>spring-boot-event</module>
         <module>spring-boot-oauth2</module>
         <module>spring-boot-seata</module>
+        <module>spring-boot-security</module>
     </modules>
 
 	<properties>
