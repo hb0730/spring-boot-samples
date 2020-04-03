@@ -25,3 +25,5 @@ spring boot starter制作案例
  spring event事件监听
 # spring-boot-seata
  Alibaba seata 分布式事务案例(官方案例)
+# spring-boot-security
+ spring security登录权限案例(非spring oauth2案例)
