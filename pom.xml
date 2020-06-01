@@ -30,7 +30,8 @@
         <module>spring-boot-oauth2</module>
         <module>spring-boot-seata</module>
         <module>spring-boot-security</module>
-    </modules>
+		<module>spring-boot-quartz</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
