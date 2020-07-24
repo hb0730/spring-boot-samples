@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <alibaba.amqp.version>1.0.5</alibaba.amqp.version>
-        <guava.version>19.0</guava.version>
+        <guava.version>[24.1.1,)</guava.version>
         <commons.lang.version>3.4</commons.lang.version>
     </properties>
 
