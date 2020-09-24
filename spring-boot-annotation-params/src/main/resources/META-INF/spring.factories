@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration= \
-cn.hb0730.configuration.ParamsAnnotationAutoConfiguration
+com.hb0730.configuration.ParamsAnnotationAutoConfiguration

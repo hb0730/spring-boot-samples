@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hb0730.spring.boot.seata.samples.integration.order.mapper.TOrderMapper">
+<mapper namespace="com.hb0730.spring.boot.seata.samples.integration.order.mapper.TOrderMapper">
 
     <!-- 开启二级缓存 -->
     <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.hb0730.spring.boot.seata.samples.integration.order.entity.TOrder">
+    <resultMap id="BaseResultMap" type="com.hb0730.spring.boot.seata.samples.integration.order.entity.TOrder">
         <id column="id" property="id" />
         <result column="order_no" property="orderNo" />
         <result column="user_id" property="userId" />
@@ -21,7 +21,7 @@
     </sql>
     <!--创建订单-->
     <insert id="createOrder" keyProperty="id" useGeneratedKeys="true"
-            parameterType="cn.hb0730.spring.boot.seata.samples.integration.order.entity.TOrder">
+            parameterType="com.hb0730.spring.boot.seata.samples.integration.order.entity.TOrder">
       insert into t_order values(null,#{order.orderNo},#{order.userId},#{order.commodityCode},${order.count},${order.amount})
     </insert>
 
