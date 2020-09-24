@@ -32,6 +32,7 @@
         <module>spring-boot-security</module>
         <module>spring-boot-quartz</module>
         <module>spring-mail</module>
+        <module>spring-boot-i18n</module>
     </modules>
 
     <properties>

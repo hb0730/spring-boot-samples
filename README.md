@@ -29,5 +29,7 @@ spring boot starter制作案例
  spring security登录权限案例(非spring oauth2案例)
 # spring-boot-quartz
  spring boot start quartz 调度案例
-# spring mail 
+# spring-mail 
  spring mail 案例
+#spring-boot-i18n
+spring boot 国际化案例
