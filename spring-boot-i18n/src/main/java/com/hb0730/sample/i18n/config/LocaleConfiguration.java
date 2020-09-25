@@ -9,9 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -33,14 +31,52 @@ public class LocaleConfiguration implements WebMvcConfigurer {
      * @see AcceptHeaderLocaleResolver#resolveLocale
      * @see WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#localeResolver()
      */
-    @Bean
-    public LocaleResolver localeResolver() {
+    @Bean("localeResolver")
+    public LocaleResolver myLocaleResolver() {
         AcceptHeaderResolver localeResolver = new AcceptHeaderResolver();
         localeResolver.setSupportedLocales(Arrays.asList(Locale.SIMPLIFIED_CHINESE, Locale.TRADITIONAL_CHINESE, Locale.US));
         localeResolver.setDefaultLocale(Locale.SIMPLIFIED_CHINESE);
         return localeResolver;
     }
 
+//    /**
+//     * 默认解析器 其中locale表示默认语言
+//     */
+//    @Bean
+//    public LocaleResolver localeResolver() {
+//        //session级
+//        SessionLocaleResolver localeResolver = new SessionLocaleResolver();
+//        //默认语言
+//        localeResolver.setDefaultLocale(Locale.US);
+//        localeResolver.setLocaleAttributeName("sessionLang");
+//        return localeResolver;
+//    }
+
+//    /**
+//     * 默认解析器，cookie
+//     */
+//    @Bean
+//    public CookieLocaleResolver localeResolver() {
+//        CookieLocaleResolver localeResolver = new CookieLocaleResolver();
+//        //默认语言
+//        localeResolver.setDefaultLocale(Locale.SIMPLIFIED_CHINESE);
+//        //解析器cookie名称
+//        localeResolver.setCookieName("cookie-lang");
+//        localeResolver.setCookieMaxAge(-1);
+//        return localeResolver;
+//    }
+
+//    @Bean
+//    public SessionLocaleResolver localeResolver() {
+//        SessionLocaleResolver localeResolver = new SessionLocaleResolver();
+//        localeResolver.setDefaultLocale(Locale.SIMPLIFIED_CHINESE);
+//        localeResolver.setLocaleAttributeName("session-lang");
+//        return localeResolver;
+//    }
+
+    /**
+     * 拦截lang 参数
+     */
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         LocaleChangeInterceptor lci = new LocaleChangeInterceptor();

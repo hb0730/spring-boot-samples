@@ -18,6 +18,9 @@ public class HelloController {
 
     @GetMapping("/hello")
     private Object hello(HttpServletRequest request) {
+        //参数1 为message.properties =左边的
+        //参数2 为message.properties的占位符
+        //参数3 为当前环境下的locale
         return source.getMessage("hello", null, LocaleContextHolder.getLocale());
     }
 }
