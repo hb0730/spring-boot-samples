@@ -33,3 +33,5 @@ spring boot starter制作案例
  spring mail 案例
 # spring-boot-i18n
 spring boot 国际化案例
+# spring-boot-dynamic-security 
+spring security 动态权限

@@ -1,0 +1,13 @@
+server:
+  port: 8088
+spring:
+  main:
+    allow-bean-definition-overriding: true
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /login
+      - /logout
+logging:
+  level:
+    org.springframework.security: DEBUG

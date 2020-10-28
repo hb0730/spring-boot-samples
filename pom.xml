@@ -33,6 +33,7 @@
         <module>spring-boot-quartz</module>
         <module>spring-mail</module>
         <module>spring-boot-i18n</module>
+        <module>spring-boot-dynamic-security</module>
     </modules>
 
     <properties>

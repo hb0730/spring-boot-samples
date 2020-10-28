@@ -1,7 +1,7 @@
 > 源码地址:[spring-boot-i18n](https://github.com/hb0730/spring-boot-samples/tree/master/spring-boot-i18n)
 
 项目采用maven方式构建,其目录结构如下:
-<img src="https://github.com/hb0730/spring-boot-samples/blob/master/doc/i18n/i18n-1.png">
+<img src="https://raw.githubusercontent.com/hb0730/spring-boot-samples/master/doc/i18n/i18n-1.png">
 # pom
 因为我采用的是spring-boot项目
 ```xml
