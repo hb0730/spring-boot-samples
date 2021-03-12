@@ -35,6 +35,7 @@
         <module>spring-boot-i18n</module>
         <module>spring-boot-dynamic-security</module>
         <module>spring-boot-mybatis-samples</module>
+        <module>spring-boot-redis-samples</module>
     </modules>
 
     <properties>
