@@ -36,6 +36,7 @@
         <module>spring-boot-dynamic-security</module>
         <module>spring-boot-mybatis-samples</module>
         <module>spring-boot-redis-samples</module>
+        <module>spring-boot-file-samples</module>
     </modules>
 
     <properties>
