@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <title>WebSSH</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.11.0/css/xterm.css">
+</head>
+<body>
+<div id="terminal" style="width: 80%;height: 70%;margin: 0 auto;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm@4.11.0/lib/xterm.min.js" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.4.0/lib/xterm-addon-fit.min.js" charset="utf-8"></script>
+<script src="/js/webssh.js" charset="utf-8"></script>
+<script>
+    openTerminal({
+        'operate': 'connect',
+        "host": "192.168.222.128"
+    });
+
+    function openTerminal(options) {
+        var client = new WSSHClient();
+        var term = new Terminal({
+            // rendererType: "canvas",
+            // cols: 97,//终端视口中的列数
+            // rows: 40, // 行数
+            cursorBlink: true,//光标是否闪烁。
+            convertEol: true, //启用时，光标将设置为下一行的开头
+            cursorStyle: 'block',//光标的样式。 'block' | 'underline' | 'bar';
+            disableStdin: false, //是否应禁用输入。
+            // scrollback: 800,//终端中的回滚量。
+        });
+        //自适应
+        var fitAddon = new FitAddon.FitAddon();
+        term.loadAddon(fitAddon);
+        term.open(document.getElementById('terminal'));
+        // fitAddon.activate(term);
+        fitAddon.fit();
+
+        term.write('Connecting...')
+
+        term.onData(function (data) {
+            //键盘输入时的回调函数
+            client.sendMessage(data);
+        })
+        client.connect({
+            //连接失败回调
+            rollbackError: function (error) {
+                term.write("Error: " + error + "\r\n");
+            },
+            //连接成功回调
+            rollbackConnect: function () {
+                client.sshConnection(options);
+            },
+            //收到数据时回调
+            rollbackSshMessage: function (data) {
+                term.write(data);
+            },
+            //连接关闭回调
+            rollbackClose: function () {
+                //连接关闭回调
+                term.write("\rconnection closed");
+            },
+
+        })
+
+    }
+</script>
+</body>
+</html>

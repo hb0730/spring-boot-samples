@@ -37,6 +37,7 @@
         <module>spring-boot-mybatis-samples</module>
         <module>spring-boot-redis-samples</module>
         <module>spring-boot-file-samples</module>
+        <module>spring-boot-webssh</module>
     </modules>
 
     <properties>
