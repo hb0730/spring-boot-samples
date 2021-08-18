@@ -1,0 +1,11 @@
+spring:
+  redis:
+    host:
+    password:
+    port:
+    database:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0

@@ -15,6 +15,8 @@
         <module>spring-boot-redis-stream-sample</module>
         <module>spring-boot-redis-stream-queue-sample</module>
         <module>spring-boot-redis-lock-sample</module>
+        <module>spring-boot-redis-publish-subscribe-sample</module>
+        <module>spring-boot-redis-stream-queue2-sample</module>
     </modules>
 
     <properties>
