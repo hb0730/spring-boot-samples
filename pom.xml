@@ -39,6 +39,7 @@
         <module>spring-boot-file-samples</module>
         <module>spring-boot-webssh</module>
         <module>spring-boot-graphql</module>
+        <module>spring-boot-hessian</module>
     </modules>
 
     <properties>
