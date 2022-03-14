@@ -47,7 +47,7 @@
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
         <!-- versions -->
         <compile.version>7</compile.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <java.version>1.8</java.version>
     </properties>
 
