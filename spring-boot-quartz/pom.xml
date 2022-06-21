@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <mysql.version>8.0.16</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
     </properties>
     <artifactId>spring-boot-quartz</artifactId>
     <dependencyManagement>
